@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 import { readFile } from "node:fs/promises";
 import { ContactForm } from "~/components/ContactForm";
@@ -23,6 +23,7 @@ const NAV_LINKS = [
   { href: "#services", label: "Services" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
+  { href: "/hire", label: "Hire Us" },
 ];
 
 const SERVICES = [
@@ -99,15 +100,25 @@ export function HomePage({ businessName }: { businessName: string }) {
             {businessName}
           </a>
           <div className="hidden items-center gap-8 sm:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.href.startsWith("#") ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-sm font-medium text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
           </div>
         </div>
       </nav>
@@ -131,12 +142,12 @@ export function HomePage({ businessName }: { businessName: string }) {
           We partner with founders and product teams to build and extend SaaS products.
         </p>
         <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            href="#contact"
+          <Link
+            to="/hire"
             className="rounded-lg bg-gray-900 px-8 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
           >
             Start a project
-          </a>
+          </Link>
           <a
             href="#services"
             className="rounded-lg border border-gray-300 px-8 py-3 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
