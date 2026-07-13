@@ -135,46 +135,71 @@ function HirePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[80dvh] flex-col items-center justify-center px-6 pt-24 text-center">
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:border-indigo-800 dark:bg-indigo-950/60 dark:text-indigo-300">
-          <span className="h-2 w-2 rounded-full bg-indigo-500" />
-          Hire Helix Engineering
+      <section className="relative flex min-h-[80dvh] flex-col items-center justify-center overflow-hidden px-6 pt-24 text-center">
+        {/* Decorative background elements */}
+        <div className="pointer-events-none absolute inset-0 bg-grid-pattern" />
+        <div className="pointer-events-none absolute -top-40 right-0 h-80 w-80 animate-float opacity-20">
+          <div className="h-full w-full rounded-full bg-gradient-to-br from-indigo-400 to-violet-600 blur-3xl" />
         </div>
-        <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-          <span className="text-gray-900 dark:text-white">
-            Let's build something
-          </span>
-          <span className="block bg-gradient-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent dark:from-indigo-400 dark:to-violet-300">
-            extraordinary.
-          </span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-400 sm:text-xl">
-          You have a vision, tight deadlines, and no time to ramp up a team.
-          We're a small, battle-tested engineering squad that ships
-          production-quality software — fast, clean, and ready to scale.
-        </p>
-        <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
-          <a
-            href="#contact"
-            className="rounded-lg bg-gray-900 px-8 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
-          >
-            Start a project
-          </a>
-          <a
-            href="#how-it-works"
-            className="rounded-lg border border-gray-300 px-8 py-3 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
-          >
-            See how it works
-          </a>
+        <div className="pointer-events-none absolute -bottom-40 left-0 h-72 w-72 animate-float-delayed opacity-15">
+          <div className="h-full w-full rounded-full bg-gradient-to-br from-emerald-400 to-cyan-600 blur-3xl" />
+        </div>
+
+        <div className="relative">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-4 py-1.5 text-sm font-medium text-indigo-700 dark:border-indigo-800 dark:bg-indigo-950/60 dark:text-indigo-300">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-indigo-500" />
+            Hire Helix Engineering
+          </div>
+          <h1 className="max-w-4xl text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <span className="text-gray-900 dark:text-white">
+              Let's build something
+            </span>
+            <span className="block animate-gradient bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500 bg-clip-text text-transparent dark:from-indigo-400 dark:via-violet-300 dark:to-purple-400">
+              extraordinary.
+            </span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600 dark:text-gray-400 sm:text-xl">
+            You have a vision, tight deadlines, and no time to ramp up a team.
+            We're a small, battle-tested engineering squad that ships
+            production-quality software — fast, clean, and ready to scale.
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="#contact"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-lg bg-gray-900 px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-900/20 transition-all hover:bg-gray-800 dark:bg-white dark:text-gray-900 dark:shadow-white/10 dark:hover:bg-gray-200"
+            >
+              <span className="relative z-10">Start a project</span>
+              <svg
+                className="relative z-10 h-4 w-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                />
+              </svg>
+            </a>
+            <a
+              href="#how-it-works"
+              className="rounded-lg border border-gray-300 px-8 py-3 text-sm font-semibold text-gray-700 transition-all hover:bg-gray-100 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-800"
+            >
+              See how it works
+            </a>
+          </div>
         </div>
       </section>
 
       {/* How It Works Section */}
       <section
         id="how-it-works"
-        className="border-t border-gray-100 bg-gray-50/50 px-6 py-24 dark:border-gray-800 dark:bg-gray-900/50"
+        className="relative overflow-hidden border-t border-gray-100 bg-gray-50/50 px-6 py-24 dark:border-gray-800 dark:bg-gray-900/50"
       >
-        <div className="mx-auto max-w-6xl">
+        <div className="pointer-events-none absolute inset-0 bg-grid-pattern-light" />
+        <div className="relative mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
             <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
               How it works
@@ -191,9 +216,9 @@ function HirePage() {
             {HOW_IT_WORKS.map((item) => (
               <div
                 key={item.step}
-                className="relative rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950"
+                className="card-hover-lift relative rounded-xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950"
               >
-                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-lg font-bold text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
+                <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 text-lg font-bold text-white shadow-md">
                   {item.step}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -209,8 +234,11 @@ function HirePage() {
       </section>
 
       {/* Engagement Models Section */}
-      <section id="models" className="px-6 py-24">
-        <div className="mx-auto max-w-6xl">
+      <section id="models" className="relative overflow-hidden px-6 py-24">
+        <div className="pointer-events-none absolute -right-40 top-0 h-72 w-72 animate-float opacity-10">
+          <div className="h-full w-full rounded-full bg-gradient-to-br from-violet-400 to-indigo-600 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-6xl">
           <div className="mx-auto max-w-2xl text-center">
             <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
               Engagement models
@@ -227,8 +255,10 @@ function HirePage() {
             {ENGAGEMENT_MODELS.map((model) => (
               <div
                 key={model.title}
-                className="group relative rounded-xl border border-gray-200 bg-white p-8 shadow-sm transition-all hover:border-indigo-200 hover:shadow-md dark:border-gray-800 dark:bg-gray-950 dark:hover:border-indigo-800"
+                className="card-hover-lift group relative rounded-xl border border-gray-200 bg-white p-8 shadow-sm dark:border-gray-800 dark:bg-gray-950"
               >
+                {/* Accent gradient line */}
+                <div className="absolute inset-x-0 top-0 h-1 rounded-t-xl bg-gradient-to-r from-indigo-500 to-violet-500 opacity-0 transition-opacity group-hover:opacity-100" />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">
                   {model.title}
                 </h3>
@@ -273,9 +303,13 @@ function HirePage() {
       {/* Pricing / FAQ Section */}
       <section
         id="pricing"
-        className="border-t border-gray-100 bg-gray-50/50 px-6 py-24 dark:border-gray-800 dark:bg-gray-900/50"
+        className="relative overflow-hidden border-t border-gray-100 bg-gray-50/50 px-6 py-24 dark:border-gray-800 dark:bg-gray-900/50"
       >
-        <div className="mx-auto max-w-3xl">
+        <div className="pointer-events-none absolute inset-0 bg-grid-pattern-light" />
+        <div className="pointer-events-none absolute -bottom-40 right-0 h-72 w-72 animate-float opacity-10">
+          <div className="h-full w-full rounded-full bg-gradient-to-br from-indigo-400 to-violet-600 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-3xl">
           <div className="text-center">
             <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
               Pricing
@@ -334,9 +368,12 @@ function HirePage() {
       {/* CTA Section with ContactForm */}
       <section
         id="contact"
-        className="px-6 py-24"
+        className="relative overflow-hidden px-6 py-24"
       >
-        <div className="mx-auto max-w-lg">
+        <div className="pointer-events-none absolute -left-40 top-1/2 h-64 w-64 animate-float-delayed opacity-10">
+          <div className="h-full w-full rounded-full bg-gradient-to-br from-indigo-400 to-violet-600 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-lg">
           <div className="text-center">
             <span className="rounded-full bg-indigo-100 px-3 py-1 text-sm font-medium text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
               Get in touch
